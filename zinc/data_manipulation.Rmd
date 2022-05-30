@@ -1,0 +1,293 @@
+---
+title: "Zinc Data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+data_zinc = read.csv("~/zinc/substances_new.csv", header=TRUE)
+```
+
+```{r}
+# if data_zinc is fully loaded
+library(magrittr)
+library(dplyr)
+data_zinc2 = data_zinc %>% select("smiles", "zinc_id")
+```
+
+```{r}
+# Export data frame into csv file
+library(tidyverse)
+
+write.csv(data_zinc2, "~/zinc/zincdata.csv", quote = FALSE, row.names = FALSE)
+```
+```{r}
+# data_zinc2 file too big, cut into pieces
+library(dplyr)
+
+i=0
+repeat{
+  assign(paste("data_zinc", toString(i+1), sep = "_") , na.omit(data_zinc2[2000000*i+1:2000000*(i+1), ]))
+  if(i > 53) 
+    break
+  i = i+1
+}
+
+```
+
+```{r}
+# Export
+
+j=1
+
+repeat{
+  write.csv(paste("data_zinc", toString(j), sep = "_"), paste("~/zinc/zincdata/zincdata_R", "/", paste("data_zinc", toString(j), sep = "_"), ".csv", sep=""), quote = FALSE, row.names = FALSE)
+  if(j>21)
+    break
+  j = j+1
+}
+```
+
+```{r}
+library(tidyverse)
+
+write.csv(data_zinc_1, file = "~/zinc/zincdata/zincdata_R/data_zinc_1.csv", quote = FALSE, row.names = FALSE)
+
+
+# Failed!
+# j = 2
+# repeat{
+#   write.csv(noquote(paste("data_zinc", toString(j), sep = "_")), 
+#             file = paste0("~/zinc/zincdata/zincdata_R/data_zinc_", toString(j), ".csv"), 
+#             quote = FALSE, row.names = FALSE)
+#   if(j>54) break
+#   j = j+1
+# }
+
+
+write.csv(data_zinc_2, file = "~/zinc/zincdata/zincdata_R/data_zinc_2.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_3, file = "~/zinc/zincdata/zincdata_R/data_zinc_3.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_4, file = "~/zinc/zincdata/zincdata_R/data_zinc_4.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_5, file = "~/zinc/zincdata/zincdata_R/data_zinc_5.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_6, file = "~/zinc/zincdata/zincdata_R/data_zinc_6.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_7, file = "~/zinc/zincdata/zincdata_R/data_zinc_7.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_8, file = "~/zinc/zincdata/zincdata_R/data_zinc_8.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_9, file = "~/zinc/zincdata/zincdata_R/data_zinc_9.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_10, file = "~/zinc/zincdata/zincdata_R/data_zinc_10.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_11, file = "~/zinc/zincdata/zincdata_R/data_zinc_11.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_12, file = "~/zinc/zincdata/zincdata_R/data_zinc_12.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_13, file = "~/zinc/zincdata/zincdata_R/data_zinc_13.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_14, file = "~/zinc/zincdata/zincdata_R/data_zinc_14.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_15, file = "~/zinc/zincdata/zincdata_R/data_zinc_15.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_16, file = "~/zinc/zincdata/zincdata_R/data_zinc_16.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_17, file = "~/zinc/zincdata/zincdata_R/data_zinc_17.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_18, file = "~/zinc/zincdata/zincdata_R/data_zinc_18.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_19, file = "~/zinc/zincdata/zincdata_R/data_zinc_19.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_20, file = "~/zinc/zincdata/zincdata_R/data_zinc_20.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_21, file = "~/zinc/zincdata/zincdata_R/data_zinc_21.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_22, file = "~/zinc/zincdata/zincdata_R/data_zinc_22.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_23, file = "~/zinc/zincdata/zincdata_R/data_zinc_23.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_24, file = "~/zinc/zincdata/zincdata_R/data_zinc_24.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_25, file = "~/zinc/zincdata/zincdata_R/data_zinc_25.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_26, file = "~/zinc/zincdata/zincdata_R/data_zinc_26.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_27, file = "~/zinc/zincdata/zincdata_R/data_zinc_27.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_28, file = "~/zinc/zincdata/zincdata_R/data_zinc_28.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_29, file = "~/zinc/zincdata/zincdata_R/data_zinc_29.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_30, file = "~/zinc/zincdata/zincdata_R/data_zinc_30.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_31, file = "~/zinc/zincdata/zincdata_R/data_zinc_31.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_32, file = "~/zinc/zincdata/zincdata_R/data_zinc_32.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_33, file = "~/zinc/zincdata/zincdata_R/data_zinc_33.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_34, file = "~/zinc/zincdata/zincdata_R/data_zinc_34.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_35, file = "~/zinc/zincdata/zincdata_R/data_zinc_35.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_36, file = "~/zinc/zincdata/zincdata_R/data_zinc_36.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_37, file = "~/zinc/zincdata/zincdata_R/data_zinc_37.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_38, file = "~/zinc/zincdata/zincdata_R/data_zinc_38.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_39, file = "~/zinc/zincdata/zincdata_R/data_zinc_39.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_40, file = "~/zinc/zincdata/zincdata_R/data_zinc_40.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_41, file = "~/zinc/zincdata/zincdata_R/data_zinc_41.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_42, file = "~/zinc/zincdata/zincdata_R/data_zinc_42.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_43, file = "~/zinc/zincdata/zincdata_R/data_zinc_43.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_44, file = "~/zinc/zincdata/zincdata_R/data_zinc_44.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_45, file = "~/zinc/zincdata/zincdata_R/data_zinc_45.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_46, file = "~/zinc/zincdata/zincdata_R/data_zinc_46.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_47, file = "~/zinc/zincdata/zincdata_R/data_zinc_47.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_48, file = "~/zinc/zincdata/zincdata_R/data_zinc_48.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_49, file = "~/zinc/zincdata/zincdata_R/data_zinc_49.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_50, file = "~/zinc/zincdata/zincdata_R/data_zinc_50.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_51, file = "~/zinc/zincdata/zincdata_R/data_zinc_51.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_52, file = "~/zinc/zincdata/zincdata_R/data_zinc_52.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_53, file = "~/zinc/zincdata/zincdata_R/data_zinc_53.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_54, file = "~/zinc/zincdata/zincdata_R/data_zinc_54.csv", quote = FALSE, row.names = FALSE)
+
+write.csv(data_zinc_55, file = "~/zinc/zincdata/zincdata_R/data_zinc_55.csv", quote = FALSE, row.names = FALSE)
+
+
+```
+
+
+```{r}
+i = 1
+print("str" + toString(i))
+toString(i)
+
+str2 = paste("str",toString(i),sep = "_")
+str2
+```
+
+```{r}
+prediction_1 = read.csv("~/zinc/substances_pred_zinc_R_1.csv", header = TRUE)
+
+head(prediction_1)
+
+arrange(prediction_1, desc(fda))
+
+
+```
+```{r}
+# first, try with 31 predictions
+file_address = paste0("~/zinc/zincpred_R/substances_pred_zinc_R_", 1:55, ".csv")
+
+pred_list = list(55)
+
+# Making lists of data frames, predicted data
+install.packages("data.table")
+library(data.table)
+# fread() 사용할것 
+for(i in 1:55){
+  pred_list[[i]] = fread(file = file_address[i], header = TRUE)
+}
+
+library(dplyr)
+
+pred_list_arrange = list(55)
+
+for(i in 1:55){
+  pred_list_arrange[[i]] = arrange(pred_list[[i]], desc(fda))
+}
+
+head(pred_list_arrange[[2]])
+
+prediction = do.call("rbind", pred_list_arrange)
+
+prediction_arranged = arrange(prediction, desc(fda))
+
+prediction_arranged = unique(prediction_arranged)
+
+head(prediction_arranged, n = 100)
+
+```
+
+```{r}
+file_address_2 = paste0("~/pred/pred_zinc_", 1:55, ".csv")
+
+pred_list_2 = list(55)
+
+# Making lists of data frames, predicted data
+library(data.table)
+for(i in 1:55){
+  pred_list_2[[i]] = fread(file = file_address_2[i], header = TRUE)
+}
+
+library(dplyr)
+
+pred_list_arrange_2 = list(55)
+
+for(i in 1:55){
+  pred_list_arrange_2[[i]] = arrange(pred_list_2[[i]], desc(fda))
+}
+
+head(pred_list_arrange_2[[2]])
+
+prediction = do.call("rbind", pred_list_arrange_2)
+
+prediction_arranged_2 = arrange(prediction, desc(fda))
+
+prediction_arranged_2 = unique(prediction_arranged_2)
+
+head(prediction_arranged_2, n = 100)
+
+prediction_arranged_cut_2 = prediction_arranged_2[1:100, ]
+
+write.csv(prediction_arranged_cut_2, file = "/home/charlesseo/zinc/zinc_top_100.csv", row.names = FALSE)
+```
+
+```{r}
+# Not using XML file
+library(tidyverse)
+library(xml2)
+library(dplyr)
+library(XML)
+library(methods)
+
+drugbank_xml_df = xmlToDataFrame("/home/charlesseo/zinc/drugbank.xml")
+
+drugbank_xml = read_xml("/home/charlesseo/zinc/drugbank.xml")
+
+drugbank_xml %>% as_list() %>% as_tibble()
+
+drugbank_xml_df = xml_find_all(drugbank_xml, '//Parenttagname/*') %>% map(xml_attrs) %>% map_df(~as.list(.)) %>% mutate(TYPE = xml_find_all(drugbank_xml, '//Parenttagname/*', ) %>%  xml_name)
+is.data.frame(drugbank_xml_df) # data frame으로 변환 시켜주었으므로 TRUE 나올 것
+
+View(drugbank_xml_df)
+
+```
+
+```{r}
+# Use SMILES File and SDF File @ Python
+```
+
